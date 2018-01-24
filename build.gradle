@@ -3,6 +3,8 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
+applicationName = "FeelingIt"
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -17,3 +19,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.2'
 
 }
+
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
