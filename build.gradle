@@ -2,8 +2,11 @@ group 'hr.cobeisfresh'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
+archivesBaseName = "FeelingIt"
 applicationName = "FeelingIt"
+mainClassName = "Main"
 
 sourceCompatibility = 1.8
 
