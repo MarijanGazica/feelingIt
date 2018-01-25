@@ -1,12 +1,9 @@
-group 'hr.cobeisfresh'
-version '1.0-SNAPSHOT'
-
 apply plugin: 'java'
 apply plugin: 'application'
 
 archivesBaseName = "FeelingIt"
 applicationName = "FeelingIt"
-mainClassName = "Main"
+mainClassName = "hr.cobeisfresh.feelingit.Main"
 
 sourceCompatibility = 1.8
 
@@ -24,4 +21,7 @@ dependencies {
 }
 
 defaultTasks = ['clean']
-task stage(dependsOn: ['build', 'clean'])
+
+task stage {
+    dependsOn installDist
+}
