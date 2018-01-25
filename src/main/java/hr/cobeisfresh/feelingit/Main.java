@@ -2,6 +2,8 @@ package hr.cobeisfresh.feelingit;
 
 import com.google.gson.Gson;
 import hr.cobeisfresh.feelingit.data.*;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import static spark.Spark.*;
 
@@ -9,10 +11,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+        staticFileLocation("/public");
+
         FeelingsDAO database = new FeelingsDAOImpl();
         Gson gson = new Gson();
 
         port(getHerokuAssignedPort());
+
+        get("/", (req, res) -> new ModelAndView(null, "index.hbs"), new HandlebarsTemplateEngine());
 
         get("/all", (req, res) -> {
             res.type("application/json");
