@@ -8,7 +8,7 @@ No memory, no users, global server state...
 
 
 
-# How to
+# How to use it
 
 Base url: `https://feelingit.herokuapp.com`
 
